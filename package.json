@@ -1,0 +1,21 @@
+{
+  "name": "openai-sdk-js-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alikakhaeru/openai-sdk-js-poc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alikakhaeru/openai-sdk-js-poc/issues"
+  },
+  "homepage": "https://github.com/alikakhaeru/openai-sdk-js-poc#readme"
+}
