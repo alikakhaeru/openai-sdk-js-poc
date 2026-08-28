@@ -13,19 +13,32 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.question("Tanya: ", async (question) => {
-  const response = await client.chat.completions.create({
-    model: "openrouter/free",
-    messages: [
-      {
-        role: "user",
-        content: question,
-      },
-    ],
+const messages = [];
+
+function askQuestion() {
+  rl.question("Tanya: ", async (question) => {
+    messages.push({
+      role: "user",
+      content: question,
+    });
+
+    const response = await client.chat.completions.create({
+      model: "openrouter/free",
+      messages: messages,
+    });
+
+    const answer = response.choices[0].message.content;
+
+    messages.push({
+      role: "assistant",
+      content: answer,
+    });
+
+    console.log("Jawaban:", answer);
+    console.log("Total tokens:", response.usage.total_tokens);
+
+    askQuestion();
   });
+}
 
-  console.log("Jawaban:", response.choices[0].message.content);
-  console.log("Usage:", response.usage);
-
-  rl.close();
-});
+askQuestion();
