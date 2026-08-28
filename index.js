@@ -11,12 +11,12 @@ async function main() {
     messages: [
       {
         role: "user",
-        content: "Halo, ini tes OpenAI SDK dengan OpenRouter.",
+        content: "Jelaskan apa itu JavaScript dengan singkat.",
       },
     ],
   });
 
-  console.log(response.choices[0].message.content);
+  console.log("Jawaban:", response.choices[0].message.content);
 }
 
 main();
