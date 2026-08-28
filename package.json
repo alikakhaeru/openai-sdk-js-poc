@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/alikakhaeru/openai-sdk-js-poc#readme",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "openai": "^7.8.0"
   }
 }
